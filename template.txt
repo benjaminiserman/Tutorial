@@ -1,0 +1,12 @@
+static void Main(string[] args)
+{
+	int[] inputs = Request(() => RandomInteger(), 10);
+	int[] outputs = new int[inputs.Length];
+
+	for (int i = 0; i < inputs.Length; i++)
+	{
+		outputs[i] = inputs[i];
+	}
+
+	Evaluate("Evaluation", inputs, outputs);
+}

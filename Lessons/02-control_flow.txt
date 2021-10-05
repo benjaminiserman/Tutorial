@@ -1,0 +1,117 @@
+Evens
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Output every input that has an even-numbered index.
+	Explanation:
+		By index I'm referring to the input's place within the input array. For example, the index of the first value in the input array is 0, and the last index (in this case) is 9. In order to do this one, you're going to use a for loop like you're used to, but with a different increment statement. Usually the increment statement is "i++". What do you think you should put there if you want to add two instead? 
+	Hints:
+		1. For the assignment operator, look at 01-Sum
+		2. How long should the output array be?
+
+Counting_Backwards
+	Inputs: none
+	Outputs: 10 integers
+	Objectives: Output each integer starting at 9 and counting down to 0.
+	Hints:
+		1. Try subtracting i from something.
+
+Reverse
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Output all inputs, but in reverse order.
+	Hints:
+		1. Use what you wrote for the last lesson.
+
+Sum_Until_0
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 1 integer
+	Objectives: Using a while loop, sum together each input until you reach an input of 0 or the end of the input array. Output the sum.
+	Explanation:
+		The while loop has the following structure:
+
+		while (condition)
+		{
+			// CODE HERE
+		}
+
+		The while loop repeatedly evaluate the condition, and if it evaluated to true, runs the code inside the while loop. Because the condition is evaluated BEFORE the code is run, it is not always guaranteed that the code inside the while loop will run.
+	Hints:
+		1. Remember the && and != operators from 01-Absolute_Value
+
+Foreach_Sum
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 1 integer
+	Objectives: Use a foreach loop to calculate the sum of the inputs array. Then, output the sum.
+	Explanation:
+		A foreach loop has the following structure:
+
+		foreach (type name in collection)
+		{
+			// DO STUFF
+		}
+
+		In that example, type is the type of variable extracted from collection. name is the name of the local variable you're declaring. collection is the collection if variables you're extracting from (this is probably an array at this point.)
+
+		For example:
+
+		foreach (int x in inputs) Console.WriteLine(x);
+
+		is basically equivalent to:
+
+		for (int i = 0; i < inputs.Length; i++) Console.WriteLine(inputs[i]);
+	Hints:
+		1. Remember your solution to 01-Sum.
+
+Sum_Until_7
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 1 integer
+	Objectives: Using a do-while loop, sum together each input until you reach an input of 7 or the end of the input array. If you reach an input of 7, be sure to add 7 to the sum. Output the sum.
+	Explanation:
+		A do-while loop has the following structure:
+
+		do
+		{
+			// CODE HERE
+		}
+		while (condition);
+
+		It works exactly like a for loop, except the condition is evaluated AFTER the code runs rather than before.
+
+Number_To_Word
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 strings
+	Objectives: Using a switch statement, convert each input to its english word form. Output the results.
+	Explanation:
+		A switch statement has the following structure:
+
+		switch (variable)
+			case 0:
+				// CODE A
+				break;
+			case 1:
+				// CODE B
+				break;
+			(...)
+			default:
+				// CODE C
+				break;
+		
+		Which is essentialy equivalent to:
+
+		if (variable == 0) ; // CODE A
+		else if (variable == 1) ; // CODE B
+		(...)
+		else ; // CODE C
+
+		Generally, we use switch statements whenever we're just checking a variable against a large number of other values for equality.
+		
+		Remember to make the outputs an array of strings this time!
+
+CHALLENGE: Addition_And_Factorial
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 5 integers
+	Objectives: The inputs represent a set of 5 pairs of integers. Add together the two values in each pair, and then output the factorial of each sum. If the result would be above the max value of an integer, output -1 instead.
+	Hints:
+		1. There should be 5 outputs.
+		2. You'll have to use nested for loops (for loops inside of for loops) here.
+		3. You can use % (see 01-Doubling) to detect if the index is odd or even.

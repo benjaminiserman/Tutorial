@@ -1,0 +1,108 @@
+Doubling
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Output each input multiplied by 2.
+	Explanation:
+		In C#, you can use math expressions. For example:
+		for (int i = 0; i < 10; i++) Console.WriteLine(i + 1);
+		would output each of the numbers 1 - 10.
+		The following symbols work like you would expect:
+		+, -, *
+		But the following have caveats:
+
+		/ - This does division, but remember that the result is of the same type as the inputs. For example, 5 and 2 are both integers, so the result of 5 / 2 will also be an integer. The / operator just removes the decimal when it has to convert a decimal into an integer.
+
+		% - This is called the modulo operator. It divides the two numbers given, and returns the remainder. For example, 5 % 2 evaluates to 1.
+
+		^ - This is not the exponent operator, but the XOR operator. Don't worry about it for now, we'll get to it when we do bit operations.
+
+		++ - This is the increment operator. It adds one to the variable before or after it.
+
+		-- - This is the decrement operator. It subtracts one from the variable before or after it.
+
+Negatives
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Output each input multiplied by -1. Do not use the * operator.
+	Explanation:
+		You can put the negative sign before an operator to switch its sign.
+
+Squaring
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Output each input squared. Do not use the Math class.
+	Hints:
+		1. Think about what mathematical operation is equivalent to squaring.
+		2. The ^ operator is NOT for exponents (squaring, cubing, etc.)
+
+Order_of_Operations
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Subtract one from each input, then output that value multiplied by two.
+	Explanation:
+		Mathematical expressions in C# are evaluated using the normal rules for order of operations. Remember PEMDAS:
+		Parentheses
+		Exponents (not applicable)
+		Multiplication/Division
+		Addition/Subtraction
+
+		Operations of an equal tier, like Addition and Subtraction, are evaluated from left to right. Parentheses work just like they do in algebra.
+
+Absolute_Value
+	Inputs: 10 integers using RandomInteger(-10, 10)
+	Outputs: 10 integers
+	Objectives: Output the absolute value (distance from zero) of each input. Do not use the Math class.
+	Explanation:
+		In order to solve this, we'll need to use if statements. If statements look like this:
+
+		if (condition)
+		{
+			// THIS CODE RUNS IF condition EVALUATES TO true
+		}
+		else
+		{
+			// THIS CODE RUNS IF condition EVALUATES TO false
+		}
+
+		where condition refers to anything that EVALUATES TO A BOOLEAN. A bool (short for boolean) is a type that is either true or false. Here are some boolean operators you can use:
+
+		x > y - returns true if x is greater than y
+		x < y - returns true if x is less than y
+		x >= y - returns true if x is greater than or equal to y
+		x <= y - returns true if x is less than or equal to y
+		x == y - returns true if x is equal to y
+		x != y - returns true if x is not equal to y
+		x && y - returns true if x and y both evaluate to true
+		x || y - returns true if either x or y evaluate to true
+		x ^ y - returns true if x or y, but NOT BOTH, evaluate to true
+		!x - returns true if x is false
+
+Sum
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 1 integer
+	Objectives: Output the sum of all inputs.
+	Explanation:
+		Whenever you need to, you can store VARIABLES. A variable is basically a way for your program to remember a value. To declare a variable, you must first define its type, then its name, and then optionally set its default value. For example:
+		int x; // this defines a variable "x" of type int with a default value of 0.
+		int y = -5; // this defines a variable "y" of type int with a de fault value of -5.
+
+		Then later, you can change the value of the variable in your code. When doing so, DO NOT WRITE THE TYPE OF THE VARIABLE. Because you've already written the type, the compiler doesn't need to ask for it again. For example:
+
+		x = 37 * y;
+
+		would set the previously defined variable "x" to -185 (since we set y to -5.) Now, if you wanted to increment a variable by 5, you could do something like:
+
+		x = x + 5;
+
+		But there are shorthand versions available in C# called the ASSIGNMENT OPERATORS:
+
+		x += y; // equivalent to x = x + y;
+		x -= y; // equivalent to x = x - y;
+		x *= y; // equivalent to x = x * y;
+		x /= y; // equivalent to x = x / y;
+		x %= y; // equivalent to x = x % y;
+
+CHALLENGE: Polynomial
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objectives: Given the polynomial f(x) = -2x^3 + 7x^2 - 9x + 5, output the value of f(x) when x equals each input.

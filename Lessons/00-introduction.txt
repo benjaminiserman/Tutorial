@@ -1,0 +1,67 @@
+Hello World
+	Inputs: none
+	Outputs: none
+	Objective: make the computer say "Hello World!"
+	Explanation: 
+		This is the most classic program in programming history. Every time you learn a new programming language, this is always the first thing you learn.
+
+		Every program in C# has a class called MainClass, and within it a method with the signature "static void Main(string[] args)". I will explain how methods and classes work later, but what you need to know now is that this is the ENTRY POINT of the program. Basically, this is where the code you write starts running.
+
+		In order to write to the console, we use the method Console.WriteLine(string). Within the Main method, write (not including the first and last quotation mark) "Console.WriteLine("Hello World!");". Run the program and the computer should say "Hello World!" 
+		
+		You may have noticed that you had to put "Hello World!" in quotation marks. This is called a STRING, and it is the first TYPE you will learn. I will explain this more later, but basically a STRING refers to bit of text. By changing the writing within the quotation marks, you are able to change what the computer says.
+
+		Finally, any code with the symbol "//" before it is a comment. Commented code is not compiled, and will not run. If you want to make an inline or multiline comment, use "/*" to start the comment and "*/" to end it. Try this now.
+	
+Counting
+	Inputs: none
+	Outputs: none
+	Objective: make the computer count from 0 to 9.
+	Explanation:
+		Now, we could do this by writing out "Console.WriteLine("1");" 10 times. However, one of the most important axioms of computer programming is that you should NEVER REPEAT YOURSELF. In order to do this without repeating ourselves, we will have to use a FOR LOOP. I'll explain how to do more with for loops later, but here's the most basic structure:
+
+		for (int i = 0; i < 10; i++)
+		{
+			// ADD CODE HERE
+		}
+
+		What this for loops is doing, is that it's creating a new variable "i" and setting it to 0. Then it alternates between running your code and incrementing i for as long as i < 10. In other words, the code inside the curlies will run 10 times. Now, because we created the variable "i" within the for loop, we can use "i" anywhere within the for loop's curlies. Try putting "Console.WriteLine(i);" within the for loop. You may be wondering why the "i" isn't within quotations like "Hello World" was in the last lesson. This is because we are sending in the VARIABLE i, not the STRING "i". Put the "i" within the Console.WriteLine in quotations and see what happens.
+
+Requesting Inputs
+	Inputs: 10 integers using RandomInteger()
+	Outputs: none
+	Objective: Request 10 integers from BackEnd and write them to the console.
+	Explanation:
+		Throughout these tutorials, we'll be using a class called BackEnd to supply the necessary inputs and check the provided outputs in order to facilitate your learning. Let's request some inputs. In your Main method, add the line, "int[] array = Request(() => RandomInteger(), 10);" This will request an array of 10 integers from the backend. Let's deconstruct how this line works. Note: while I will almost always be sending in 10 inputs, always write your code to work with any number of inputs.
+
+		"int[] inputs": This creates a new variable called "inputs". The type of the variable is int[]. The "int" part means INTEGER, which is a whole number between -2,147,483,648 and 2,147,483,647. The square brackets designate this variable as an ARRAY. This of an array as a list of variables with a fixed length.
+
+		"Request(...)": This calls the Request method from the BackEnd class.
+
+		"() => RandomInteger()": This tells the Request method how you want to generate the random inputs. Each lesson will tell you what input method to use.
+
+		"10": This tells the Request method how many inputs to provide. Each lesson will tell you how many inputs to request.
+
+		Now, let's use this new array we've made. We're going to use a for loop very similar to the one we used last lesson. Add this line to your Main method:
+
+		for (int i = 0; i < inputs.Length; i++)
+		{
+			Console.WriteLine(inputs[i]);
+		}
+
+		So there's two differences here from the last one. First, the condition here is "i < inputs.Length". Now, we could have used "i < 10" here. If we did that, we would have to change every instance of the number 10 whenever we changed the number of inputs. That's why we used "inputs.Length" instead.
+
+		Secondly, we're writing "inputs[i]" instead of "i". You'll notice we're using square brackets again, just like we did when we declared the "inputs" variable. Square brackets are strongly associated with arrays. In this case, "inputs[i]" is basically equivalent to writing "get value i from the array 'inputs'".
+
+Evaluation
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 integers
+	Objective: Output the input.
+	Explanation:
+		The code for this lesson is provided in "template.txt" on the left. This lesson is basically the foundation on which all future lessons will build on. I'll go ahead and explain the differences between this code and the code from the prior lesson.
+
+		"int[] outputs = new int[inputs.Length];": This line is creating the output array. Never modify the inputs array, as it is needed to check your answers (This is also generally true throughout programming. Don't modify your inputs!) "new int[inputs.Length]" creates a new integer array of length inputs.Length. The default value of each variable within an integer array is 0.
+
+		"outputs[i] = inputs[i];": Here we're setting each value in outputs to it's parallel value in inputs.
+
+		"Evaluate("Evaluation", inputs, outputs);" This line tells BackEnd to check your answers. It will tell you if you got anything wrong. In future lessons, replace "Evaluation" with the name of the lesson in order to get the correct response from BackEnd.

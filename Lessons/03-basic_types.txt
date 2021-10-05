@@ -1,0 +1,178 @@
+Division
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 10 doubles
+	Objectives: Output each input divided by 2.
+	Explanation:
+		/ does division, but remember that the result is of the same type as the inputs. For example, 5 and 2 are both integers, so the result of 5 / 2 will also be an integer. The / operator just removes the decimal when it has to convert a decimal into an integer.
+
+		In order to get the correct answer, divide by 2.0 instead of 2.
+
+Floor
+	Inputs: 10 doubles using RandomDouble(-10, 10)
+	Outputs: 10 integers
+	Objectives: Output each input rounded down. Do not use Math.Round, Math.Floor, or Math.Ceil
+	Explanation:
+		In many cases, it is possible to convert values from one type to another. For example, in the prior lesson the compiler was implicitly converting the left side of that division into a double. To explicitly convert a value to a different type, cast it by putting the type you want in parenthesis in front of the value. For example:
+
+		double x = 3.5;
+		int y = (int)x;
+		Console.WriteLine(y);
+		// outputs 3
+
+		When converting from a floating-point type to an integral type, everything after the decimal point is truncated.
+
+Mini-Lesson: Shorthand If
+	Explanation:
+		In order to keep typing to a minimum, there's actually a shorthand way to write conditional expressions. The shorthand if expression, also called the ternary or conditional operator, has the following form:
+
+		condition ? result-if-true : result-if-false;
+
+		Here's an example:
+
+		int x = -3;
+		string s = x < 0 ? "negative" : "positive";
+		Console.WriteLine(s); // writes "negative"
+		Console.WriteLine(x == 0 ? "x is zero" : "x is not zero"); // writes "x is not zero"
+
+		Try doing 03-Floor again, but this time do not use any if statements, only shorthand if expressions.
+
+Mini-Lesson: Floats, Doubles, and Decimals
+	Explanation:
+		There are three ways of representing decimal point numbers: floats, doubles, and decimals. Doubles are generally the most common (as they are the default for decimal point numbers), but floats are very common in Unity games.
+
+		Floats
+			- 32 bits
+			- least precise (6-9 digits)
+			- middle range (±1.5e−45 to ±3.4e38)
+			- 0.5f, 0.5F
+		Doubles
+			- 64 bits
+			- middle precision (15-17 digits)
+			- largest range (±5.0e-324 to ±1.7e308)
+			- 0.5d, 0.5D, 0.5
+		Decimals
+			- 128 bits
+			- most precise (28-29 digits)
+			- smallest range (±1.0e-28 to ±7.9228e28)
+			- 0.5m, 0.5M
+
+Integral_Types
+	Inputs: 10 longs using RandomLong()
+	Outputs: 10 strings
+	Objectives: Output the name of the smallest of the 4 main integral types that can store the given input. For example, 65 => "byte", but 859 => "short".
+	Explanation:
+		There are 4 main integral types: byte, short, int, and long. Each one uses twice the storage as the one before it. No integral type can store decimals, but any numbers stored by any integral type will be stored with 100% precision. All of the main integral types are signed (meaning they can store negative numbers) EXCEPT byte.
+
+		When you're programming, always use ints unless you're specifically working with bytes, you need more range (longs), or you're doing network programming and bandwith is a concern.
+
+		To get the max value of an integral type, use the property MaxValue of that type.
+
+		Bytes
+			- 8 bits
+			- range: 0 to 255
+		Shorts
+			- 16 bits
+			- range: -32,768 to 32,767
+		Ints
+			- 32 bits
+			- range: -2,147,483,648 to 2,147,483,647
+		Longs
+			- 64 bits
+			- range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
+Unsigned_Types
+	Inputs: 10 ulongs using RandomUlong()
+	Outputs: 10 strings
+	Objectives: Output the name of the smallest of the unsigned integral types that can store the given input.
+	Explanation:
+		Short, int, and long each have an alternate unsigned form. These are ushort, uint, and ulong. The unsigned integral types have double the positive range of their signed counterparts, but cannot store negatives. Along with byte; ushort, uint, and ulong make up the unsigned integral types.
+
+Mini-Lesson: Byte vs. Sbyte
+	Explanation:
+		Both byte and sbyte take up the same amount of space. As you know, Byte has a range of 0 to 255. Sbyte, standing for "signed byte", has a range of -128 to 127 instead.
+
+Opposite
+	Inputs: 10 bools using RandomBoolean()
+	Outputs: 10 bools
+	Objectives: Output the opposite of each input.
+	Explanation:
+		We are now going to be using the type bool. A bool, short for boolean, stores a value of either true or false. The operator ! can be placed in front of a boolean to return the opposite value. For example: !true => false, and !false => true.
+And_All
+	Inputs: 3 bools using RandomBoolean()
+	Outputs: 1 bool
+	Objectives: Output whether or not all inputs are true. Use && or &= in your code.
+	Explanation:
+		There are three operators for comparing booleans. Those are && (AND), || (OR), and ^ (XOR).
+
+		a && b - returns true if a == true and b == true
+		a || b - returns true if either a == true or b == true
+		a ^ b - returns true if a != b.
+
+		There are also & and |. These are less efficient versions of && and || that are used primarily for bit operations. Bit operations may show up in an optional unit in the future. There are no operators &&= or ||=, you have to use &=, |=, and ^= instead.
+
+		To solve this problem, you'll use a structure similar to that used to solve 01-Sum, but with &= instead of +=.
+
+True_Or_False
+	Inputs: 3 bools using RandomBoolean()
+	Outputs: 1 bool
+	Objectives: Output whether or not any of the inputs are true. Use || or |= in your code.
+	Hints:
+		- Use what you wrote last lesson.
+
+Vowels
+	Inputs: 10 chars using RandomLetter()
+	Outputs: 10 bools
+	Objectives: Output whether or not the given char is a vowel for each input. For the purposes of this lesson, 'y' is always a vowel.
+	Explanation:
+		The next type to learn is the char. A char represents a single Unicode UTF-16 character. Just like how strings use "" to delineate where the string starts and ends, chars use ''. For example:
+
+		char c = 'x';
+		Console.WriteLine(c == 'a');
+
+		Writes "false", because 'x' != 'a'.
+
+Word_Building
+	Inputs: 10 chars using RandomLetter()
+	Outputs: 1 string
+	Objectives: Add together all of the chars in order. Output the resulting string.
+	Explanation:
+		A string is actually just an array of chars (with a few added features). Chars can be added to strings with the + and += operators. Chars cannot be added to eachother, so you'll have to create a string to add them to. To create an empty string, set a string variable to either "" or string.Empty. string.Empty is generally the preferred method of the two, but either works.
+
+First_And_Last
+	Inputs: 10 strings using RandomWord()
+	Outputs: 10 strings
+	Objectives: For each input, output a two-letter string that starts with the first letter of the input and ends with the last.
+	Explanation:
+		Because a string is basically a char[], you can use indexers with it. Just like how you can use square brackets with the inputs array, try using square brackets with a string. Remember, x[0] gives the first element, and x[x.Length - 1] gets the last.
+
+Mini-Lesson: String Interpolation
+	Explanation:
+		There are two different ways to do string interpolation. The preferred method is to put a dollar sign before the first quote in the string, like: $"Hello: {name}". Some older programs will use string.Format instead, like string.Format("Hello: {0}", name). Interpolating strings allows you to easily add strings together in very few lines of code. Try doing First_And_Last with string interpolation instead.
+
+Substring
+	Inputs: 10 strings using RandomWord()
+	Outputs: 10 strings
+	Objectives: For each input, output a one or two letter string containing the middle one or two letter(s) of the word. Use string.Substring(int, int).
+	Explanation:
+		The Substring method takes two arguments: the starting index and the length. It returns the string of letters starting at the specified index with the specified length. For example, "Hello World".Substring(0, 5) => "Hello" and "Hello World".Substring(6, 5) => "World".
+	Hints:
+		- You will have to determine whether the string has an even or odd numbers of letters to do so. Try using the % operator to do so. (Refer to 01-Doubling for explanation of %)
+
+Capitalize
+	Inputs: 10 strings using RandomWord()
+	Outputs: 10 strings
+	Objectives: Output each input, but with the first letter capitalized.
+	Explanation:
+		There are two options for capitalizing: char.ToUpper(char) or string.ToUpper(). char.ToUpper(char) returns the upper-case version of the given char. string.ToUpper() capitalizes each letter in the given string. 
+	Hints:
+		- Use either Substring or [] to separate the first letter from the rest of the string.
+
+Sentence_Building
+	Inputs: 10 strings using RandomWord()
+	Outputs: 1 string
+	Objectives: Add all of the words together into one string with spaces betwee n each pair of words. Capitalize the first letter of the string, and add punctuation at the end. Output the resulting string.
+
+CHALLENGE: Sentence_Parsing
+	Inputs: 1 string using RandomSentence()
+	Outputs: an array of strings
+	Objectives: Separate the input sentence into an array of strings representing each words. Do not include any spaces or punctuation. Use string.ToLower() to make all words lowercase. Output the array.

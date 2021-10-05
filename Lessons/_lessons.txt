@@ -1,0 +1,57 @@
+Lesson Plan
+
+[00] Introduction:
+	Hello World
+	Counting
+	Requesting_Inputs
+	Evaluation
+
+[01] Basic Math:
+	Doubling
+	Negatives
+	Squaring
+	Order_of_Operations
+	Absolute_Value
+	Sum
+	Challenge: Polynomial
+
+[02] Control Flow:
+	Evens
+	Counting_Backwards
+	Reverse
+	Sum_Until_0
+	Foreach_Sum
+	Sum_Until_7
+	Number_To_Word
+	Challenge: Addition_And_Factorial
+
+[03] Basic Types:
+	Division
+	Floor
+	Mini-Lesson: Floats, Doubles, and Decimals
+	Integral_Types
+	Unsigned_Types
+	Mini-Lesson: Byte vs. Sbyte
+	Opposite
+	And_All
+	True_Or_False
+	Vowels
+	Word_Building
+	First_And_Last
+	Mini-Lesson: String Interpolation
+	Substring
+	Capitalize
+	Sentence_Building
+	Challenge: Sentence_Parsing
+
+[04] Collections:
+	Pairs
+	Mini-Lesson: Alternative Methods of Array Creation
+	Multidimensional_Arrays
+	Lists
+	Count_Twos
+	Mini-Lesson: Queue & Stack
+	Tuples
+	Tuple_Construction
+	Dictionary
+	Challenge: Word_Length

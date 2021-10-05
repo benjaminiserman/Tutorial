@@ -1,0 +1,122 @@
+Pairs
+	Inputs: 10 integers using RandomInteger()
+	Outputs: 5 integer arrays
+	Objectives: For each pair of inputs, create a two-length integer array containing both integers in the pair. Output these arrays.
+	Explanation:
+		To create an array, use the following syntax:
+
+		T[] arrayName = new T[lengthOfArray];
+
+		with T being the type of the array, in this case, "int".
+		Now, you can access and set values of the array just like your inputs and outputs arrays. 
+		Here's an example input/output for this lesson:
+		{7, 5, 9, 3, 4, 6, 2, 0, 7, 3} => {{7, 5}, {9, 3}, {4, 6}, {2, 0}, {7, 3}}
+	Hints:
+		- An element of your solution to 02-Addition_And_Factorial may be useful here.
+
+Mini-Lesson: Alternative Methods of Array Creation
+	Explanation:
+		There's actually another way of creating an array if you know beforehand what each value inside will be. It works like this:
+
+		T[] arrayName = new T[] { value1, value2, ..., valueN };
+
+		for example:
+
+		int[] evenNumbers = new int[] { 2, 4, 6, 8, 10, 12, 14, 16 };
+
+		Do the prior lesson again, but use this alternative way of creating arrays instead.
+	
+Multidimensional_Arrays
+	Inputs: 3 integer arrays using CreateArray(10, (int i) => RandomInteger())
+	Outputs: 1 two-dimensional integer array
+	Objectives: Combine all input arrays into one two-dimensional array and output it.
+	Explanation:
+		To create a two-dimensional array, use the following syntax:
+
+		T[,] arrayName = new T[numberOfRows, numberOfColumns];
+
+		Make each row of your output array one of the input arrays.
+
+Lists
+	Inputs: 10 doubles using RandomDouble()
+	Outputs: 1 list of doubles
+	Objectives: Use foreach to add each double to a list. Output the resulting list.
+	Explanation:
+		To create a list, use the following syntax:
+
+		List<T> listName = new List<T>();
+
+		Then, you can add to the list using:
+
+		listName.Add(nameOfElement);
+	Hints:
+		- Look back to 02-Foreach_Sum to see how to use foreach loops.
+
+Count_Twos
+	Inputs: 10 lists of integers using CreateList((int i) => RandomInteger())
+	Outputs: 10 integers
+	Objectives: For each input list, output the number of 2's in that list.
+
+Mini-Lesson: Queue & Stack
+	Explanation:
+		Whenever you need to model a queue of things to do, you can use Queue<T> or Stack<T>. To add an element either collection, use:
+
+		Enqueue(newElementHere);
+
+		To remove an element, use:
+
+		Dequeue(newElementHere);
+
+		and to peek at the next element (but not remove it), use:
+
+		Peek(newElementHere);
+
+		The difference between the two is that Queue is FIFO (first in, first out) where Stack is LIFO (last in, first out). In other words, when you pull something out of Queue, it gives you the oldest element. When you pull something out of Stack, it gives the newest element.
+
+Tuples
+	Inputs: 10 (float, float, float) tuples using ((float)RandomDouble(), (float)RandomDouble(), (float)RandomDouble())
+	Outputs: 10 floats
+	Objectives: For each input tuple, output the product of all three elements of the tuple multiplied together.
+	Explanation:
+		Tuples have the following form:
+
+		(T0, T1, T2, T3, ..., TN) tupleName = (element1, element2, element3, ..., elementN);
+
+		For example, this is a tuple of each of a person's names:
+
+		(string firstName, string middleName, string secondMiddleName, string lastName) name = ("John", "Ronald", "Reuel", "Tolkien");
+
+		If you wanted to write out just the first and last name, you could then do:
+
+		Console.WriteLine($"The author of The Hobbit is {name.firstName} {name.lastName}");
+
+		Generally, you only use tuples when you need a quick collection of objects that you don't plan on using often. Otherwise, it's better to use a struct (which we'll get to later). For now, just use tuples wherever you think they would be useful.
+
+		If the values of a tuple do not have names, you can instead use tupleName.Item1, tupleName.Item2, etc. to get the values.
+
+Tuple_Construction
+	Inputs: 10 lists of integers using CreateList((int i) => RandomInteger())
+	Outputs: 10 (int, int, int) tuples.
+	Objectives: For each list, output a tuple containing values representing the list's average, mode, and length, in that order. If a list has multiple modes, output the highest one. Round the list's average down.
+
+Dictionary
+	Inputs: 10 strings using RandomWord()
+	Outputs: 1 Dictionary<string, int>
+	Objectives: Create a dictionary keyed by the inputs, with each value being the number of vowels in the key.
+	Explanation:
+		A dictionary is a way of storing values based on a key. To create a new dictionary, use the following syntax:
+
+		Dictionary<TKey, TValue> dictionaryName = new Dictionary<TKey, TValue>();
+
+		and to add to the dictionary, use:
+
+		dictionaryName.Add(key, value);
+
+		to access a value from a dictionary, use:
+
+		dictionaryName[key]
+
+CHALLENGE: Word_Length
+	Inputs: 10 (string, string) tuples using (RandomSentence(), RandomSentence())
+	Outputs: 1 Dictionary<string, int>
+	Objectives: For each input, choose the string with the longer length. If both strings are the same length, choose the first one. Split this sentence into its individual words, in all lowercase. Finally, create a Dictionary keyed to each word, with each value being the length of the word.
