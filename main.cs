@@ -1,13 +1,13 @@
 using System;
-using static BackEnd;
 using System.Linq;
 using System.Collections.Generic;
+using static BackEnd;
 
 class MainClass
 {
 	static void Main(string[] args)
 	{
-		var inputs = Request(() => (RandomSentence(), RandomSentence()), 10);
+		var inputs = Request(() => (RandomSentence(), RandomSentence()), 10); // request inputs
 		Dictionary<string, int> outputs = new Dictionary<string, int>();
 
 		for (int i = 0; i < inputs.Length; i++)
@@ -18,7 +18,7 @@ class MainClass
 			foreach (string s in words) if (!string.IsNullOrWhiteSpace(s)) outputs.Add(s.ToLower(), s.Length);
 		}
 
-		Evaluate("Word_Length", inputs, outputs);
+		Evaluate("Word_Length", inputs, outputs); // send results to grading system
 	}
 }
 
